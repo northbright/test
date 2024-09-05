@@ -12,15 +12,12 @@ jobs:
     strategy:
       matrix:
         os:
-        - windows-2019
-        - windows-latest
-        - macos-12
+        - macos-14
         - macos-latest
-        - ubuntu-22.04
+        - ubuntu-24.04
         - ubuntu-latest
         go:
-        - "1.17"
-        - "1.22"
+        - "1.23"
 
       fail-fast: false
     steps:
@@ -32,8 +29,46 @@ jobs:
       with:
         go-version: ${{ matrix.go }}
 
+    - name: Setup Texlive
+      uses: teatimeguest/setup-texlive-action@v3
+      with:
+        packages: >-
+          scheme-small
+          ctex
+          minted
+          keyval
+          ifthen
+          kvoptions
+          calc
+          fancyvrb
+          ifplatform
+          fvextra
+          pdftexcmds
+          upquote
+          etoolbox
+          float
+          xstring
+          xcolor
+          lineno
+          framed
+          shellesc
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+
+    - name: Setup pygmentize
+      run: python3 -m pip install pygments && pygmentize -V
+
+    - name: Check XeLaTex Version
+      run: xelatex --version
+
     - name: Build
       run: go build -v
 
     - name: Test
       run: go run main.go
+
+    - name: xelatex test
+      run: xelatex -synctex 1 -interaction nonstopmode -8bit -shell-escape contract.tex
