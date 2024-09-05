@@ -1,8 +1,33 @@
-\documentclass[UTF8,nofonts]{ctexart}
-\setCJKmainfont[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
-\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
-\setCJKmonofont{FandolFang-Regular.otf}
+\documentclass[UTF8]{ctexart}
+
+\setCJKmainfont{苹方-简}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
 
 \begin{document}
-你好，世界！
+
+% Title Page
+\include{00-title}
+
+% Table of Contents
+\tableofcontents
+\clearpage
+
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\thepage}
+
+\include{01-定义}
+\include{02-合同标的}
+\include{03-双方义务}
+\include{04-保密}
+\include{05-知识产权}
+\include{06-违约责任}
+\include{07-合同的变更和终止}
+\include{08-一般条款}
+\include{09-合同期限}
+\include{10-文本和效力}
+\include{11-双方确认和签署}
+
 \end{document}

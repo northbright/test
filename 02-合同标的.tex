@@ -1,0 +1,113 @@
+\section{合同标的}
+
+\subsection{服务地点}
+\{\{ .Location \}\}
+
+\subsection{服务期限}
+\{\{ .Period.BeginDate \}\} 至 \{\{ .Period.EndDate \}\}
+
+\subsection{项目负责人}
+\subsubsection{甲方项目负责人职责} 
+\begin{enumerate}
+  \item 确定服务需求
+  \item 沟通项目进展
+  \item 参与确认工作量/验收并签署相关确认文件
+\end{enumerate}
+
+\subsubsection{甲方项目负责人} 
+\begin{itemize}
+  \item 姓名：\{\{ .PartyAManager.Name \}\}
+  \item 联系电话：\{\{ .PartyAManager.PhoneNum \}\}
+  \item Email：\{\{ .PartyAManager.Email \}\}
+\end{itemize}
+
+\subsubsection{乙方项目负责人职责}
+\begin{enumerate}
+  \item 确定项目计划并安排项目人员
+  \item 沟通项目进展
+  \item 参与确认工作量/验收并签署相关确认文件
+\end{enumerate}
+
+\subsubsection{乙方项目负责人}
+\begin{itemize}
+  \item 姓名：\{\{ .PartyBManager.Name \}\}
+  \item 联系电话：\{\{ .PartyBManager.PhoneNum \}\}
+  \item Email：\{\{ .PartyBManager.Email \}\}
+\end{itemize}
+
+\clearpage
+
+\subsection{服务范围}
+\{\{ with .Services \}\}
+\{\{ range . \}\}
+\subsubsection{ \{\{ .Name \}\} }
+{\{\{ .Desc \}\}}
+\{\{ with .SubServices \}\}
+\begin{enumerate}
+\{\{ range . \}\}
+  \item \{\{ . \}\}
+\{\{ end \}\}
+\end{enumerate}
+\{\{ end \}\}
+\{\{ end \}\}
+\{\{ end \}\}
+
+\clearpage
+
+\subsection{项目里程碑}
+\{\{ with .Milestones \}\}
+\begin{tabular}{|l|c|r|}
+  \hline
+  \textbf{里程碑}& \textbf{预计期限}\\
+  \hline
+  \{\{ range . \}\}
+  \{\{ .Name \}\}& \{\{ .Period.BeginDate \}\} 至 \{\{ .Period.EndDate \}\}\\
+  \hline
+  \{\{ end \}\}
+\end{tabular}
+\{\{ end \}\}
+
+\clearpage
+
+\subsection{费用和支付}
+
+\subsubsection{费用总额}
+本工作说明书项下服务费用含税总额为¥\{\{ .Price.Amount \}\}（\{\{ .Price.AmountInRMB \}\}）。
+
+\subsubsection{费用支付}
+\{\{ with .Payments \}\}
+\begin{tabular}{|l|c|r|}
+  \hline
+  \textbf{阶段}& \textbf{金额}\\
+  \hline
+  \{\{ range . \}\}
+  \{\{ .Stage \}\}& \{\{ .Price.Amount \}\}（\{\{ .Price.AmountInRMB \}\})\\
+  \hline
+  \{\{ end \}\}
+\end{tabular}
+\{\{ end \}\}
+
+\subsubsection{支付方式}
+\begin{itemize}
+  \item 每一期服务费用的支付条件成就后，乙方应向甲方开具相应金额的合法有效的税务发票
+  \item 甲方应在收到发票后 30 日内，以银行转账方式将应付款项足额汇至乙方指定银行账户
+\end{itemize}
+
+\clearpage
+
+\subsection{维保服务}
+
+\subsubsection{维保期限}
+乙方就技术成果提供维保服务的期限为 \{\{ .WarrantyPeriodInMonth \}\} 个月，自该等技术成果通过甲方终验之
+日的次日起算。
+
+\subsubsection{维保服务的内容}
+\begin{itemize}
+  \item 排除故障
+  \item 修正缺陷
+  \item 不包括对服务成果所作的功能性变更，包括但不限于增减、改变功能；增减最大并
+发用户数量；调整用户界面。
+\end{itemize}
+
+\subsubsection{维保服务的方式}
+电话、传真、电子邮件等非现场方式。如果确需采用现场方式，由双方提前协商。
