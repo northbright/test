@@ -60,3 +60,9 @@ jobs:
 
     - name: xelatex test
       run: xelatex -synctex 1 -interaction nonstopmode -8bit -shell-escape contract.tex
+
+    - name: Upload Compiled PDF
+    - uses: actions/upload-artifact@v4
+      with:
+        name: contract
+        path: contract.pdf
